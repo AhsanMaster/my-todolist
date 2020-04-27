@@ -1,0 +1,17 @@
+version: '3.5'
+services:
+  db:
+    image: postgres:11.2-alpine
+    container_name: todo-db
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: todo_db
+    ports:
+      - 9666:5432
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8084:8080
